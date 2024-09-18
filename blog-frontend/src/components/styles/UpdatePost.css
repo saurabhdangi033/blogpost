@@ -1,0 +1,68 @@
+/* UpdatePost.css */
+.update-post-container {
+  padding: 50px;
+  background-color: #010d18;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-post-container h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.update-post-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 70px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.update-post-form input,
+.update-post-form textarea {
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.update-post-form input:focus,
+.update-post-form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.update-post-form textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.update-post-form button {
+  padding: 15px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-post-form button:hover {
+  background-color: #2980b9;
+}
+
+.update-post-form button:active {
+  background-color: #21618c;
+}

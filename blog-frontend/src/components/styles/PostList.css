@@ -1,0 +1,92 @@
+/* Post List Container Styling */
+.post-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+h2{
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 18px;
+  color: #1e90ff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.card .author {
+  font-size: 14px;
+  color: #000000;
+}
+
+.card .btn {
+  text-decoration: none;
+  color: white;
+  background-color: #1e90ff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.card .btn:hover {
+  background-color: #1c86ee;
+}
+
+
+
+
+
+
+/* .create-post-link {
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.create-post-link:hover {
+  background-color: #2980b9;
+} */
+
