@@ -13,7 +13,7 @@ const UpdatePost = () => {
   const [currentImage, setCurrentImage] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/blog/posts/${id}`)
+    axios.get(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`)
       .then(response => {
         setTitle(response.data.title);
         setContent(response.data.content);
@@ -38,7 +38,7 @@ const UpdatePost = () => {
     }
 
     try {
-      await axios.put(`http://localhost:5000/api/blog/posts/${id}`, formData, {
+      await axios.put(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -60,7 +60,7 @@ const UpdatePost = () => {
         {currentImage && (
           <div>
             <img
-              src={`http://localhost:5000/uploads/${currentImage}`}
+              src={`https://blogpost-nu-seven.vercel.app/uploads/${currentImage}`}
               alt="Current Post"
               style={{ width: '100%', maxHeight: '200px', objectFit: 'cover' }}
             />

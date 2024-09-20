@@ -9,14 +9,14 @@ const PostDetail = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/blog/posts/${id}`)
+    axios.get(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`)
       .then(response => setPost(response.data))
       .catch(error => console.error(error));
   }, [id]);
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/blog/posts/${id}`);
+      await axios.delete(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`);
       navigate('/');
     } catch (error) {
       console.error(error);
@@ -33,7 +33,7 @@ const PostDetail = () => {
         <p className="post-content">{post.content}</p>
         {post.image && (
           <img
-            src={`http://localhost:5000/uploads/${post.image}`}
+            src={`https://blogpost-nu-seven.vercel.app/uploads/${post.image}`}
             alt="Post"
             style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }}
           />
