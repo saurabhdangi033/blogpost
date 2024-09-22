@@ -9,14 +9,14 @@ const PostDetail = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/blog/posts/${id}`)
+    axios.get(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`)
       .then(response => setPost(response.data))
       .catch(error => console.error(error));
   }, [id]);
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/blog/posts/${id}`);
+      await axios.delete(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`);
       navigate('/');
     } catch (error) {
       console.error(error);
