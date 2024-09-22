@@ -10,23 +10,26 @@ const UpdatePost = () => {
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
   const [image, setImage] = useState(null);
-  const [currentImage, setCurrentImage] = useState(null);
+  const [currentImage, setCurrentImage] = useState(null); // Holds the Cloudinary URL
 
+  // Fetch existing post data to populate the form
   useEffect(() => {
-    axios.get(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`)
+    axios.get(`http://localhost:5000/api/blog/posts/${id}`)
       .then(response => {
         setTitle(response.data.title);
         setContent(response.data.content);
         setAuthor(response.data.author);
-        setCurrentImage(response.data.image);
+        setCurrentImage(response.data.image); // Set Cloudinary image URL
       })
       .catch(error => console.error(error));
   }, [id]);
 
+  // Handle image file selection
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
+    setImage(e.target.files[0]); // Prepare image for upload
   };
 
+  // Submit the updated form
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -34,16 +37,16 @@ const UpdatePost = () => {
     formData.append('content', content);
     formData.append('author', author);
     if (image) {
-      formData.append('image', image);
+      formData.append('image', image); // Only append the new image if one is selected
     }
 
     try {
-      await axios.put(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`, formData, {
+      await axios.put(`http://localhost:5000/api/blog/posts/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      navigate(`/posts/${id}`);
+      navigate(`/posts/${id}`); // Navigate to the updated post after successful submission
     } catch (error) {
       console.error(error);
     }
@@ -60,7 +63,7 @@ const UpdatePost = () => {
         {currentImage && (
           <div>
             <img
-              src={`https://blogpost-nu-seven.vercel.app/uploads/${currentImage}`}
+              src={currentImage} // Display the Cloudinary-hosted image
               alt="Current Post"
               style={{ width: '100%', maxHeight: '200px', objectFit: 'cover' }}
             />

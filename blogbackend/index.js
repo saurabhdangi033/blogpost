@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'https://blogpost-1v7v.vercel.app/',  // Allow requests from your frontend origin
+  origin: 'http://localhost:3000',  // Allow requests from your frontend origin
   methods: 'GET,POST,PUT,DELETE',
   credentials: true,  // Allow cookies and other credentials
   allowedHeaders: 'Content-Type,Authorization'

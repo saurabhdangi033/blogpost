@@ -38,7 +38,7 @@ const CreatePost = () => {
     formData.append('image', values.image);
 
     try {
-      await axios.post('https://blogpost-nu-seven.vercel.app/api/blog/create', formData, {
+      await axios.post('http://localhost:5000/api/blog/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
