@@ -41,7 +41,7 @@ const UpdatePost = () => {
     }
 
     try {
-      await axios.put(`https://blogpost-nu-seven.vercel.app/blog/posts/${id}`, formData, {
+      await axios.put(`https://blogpost-nu-seven.vercel.app/api/blog/posts/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

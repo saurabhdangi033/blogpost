@@ -1,80 +1,155 @@
-/* CreatePost CSS */
+/* Create Post Container Styling */
 .create-post-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  background-color: #010d18;
-  height: 80vh;
+  background-color: #121212;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.create-post-container h2 {
-  color: #ffffff;
+/* Starry Background Animation */
+.create-post-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0.3;
+  animation: floatingStars 50s infinite linear;
+  z-index: -1;
+}
+
+@keyframes floatingStars {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+
+/* Title Styling */
+h2 {
+  text-align: center;
+  color: #1e90ff;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 30px;
 }
 
-.create-post-container form {
+/* Form Styling */
+.form {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 300px;
-  background-color: #ffffff;
-  padding: 70px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-bottom: 50px;
+  gap: 20px;
 }
 
-.create-post-container input[type="text"],
-.create-post-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
-  font-size: 1.2rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
-  font-family: 'Arial', sans-serif;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.create-post-container input[type="text"]:focus,
-.create-post-container textarea:focus {
-  border-color: #3498db;
-  outline: none;
+.form-group label {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
-.create-post-container textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.create-post-container button {
-  padding: 15px;
-  background-color: #07314d;
-  color: #fff;
-  font-size: 1.2rem;
+.form-group input[type="text"],
+.form-group textarea {
+  padding: 10px;
   border: none;
   border-radius: 8px;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px #1e90ff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input[type="file"] {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Error Messages Styling */
+.error {
+  color: #ff4c4c;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+  background-color: #1e90ff;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
   cursor: pointer;
-  margin-left: 20px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
-.create-post-container button:hover {
-  background-color: #00090e;
+button[type="submit"]:hover {
+  background-color: #007acc;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.create-post-container button:active {
-  background-color: #011118;
+button[type="submit"]:disabled {
+  background-color: #888;
+  cursor: not-allowed;
 }
 
-.create-post-container input[type="text"]::placeholder,
-.create-post-container textarea::placeholder {
-  color: #888;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .create-post-container {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
 }
 
+@media (max-width: 480px) {
+  .create-post-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

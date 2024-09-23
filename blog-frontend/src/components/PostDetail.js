@@ -35,7 +35,7 @@ const PostDetail = () => {
           <img
             src={post.image} // Using the Cloudinary URL directly from the post data
             alt="Post"
-            style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }}
+            
           />
         )}
         <div className="post-footer">
